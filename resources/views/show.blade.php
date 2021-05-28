@@ -8,13 +8,13 @@
     </head>
     <body>
         <h1>Blog Name</h1>
-        <div class='posts'>
-            @foreach($posts as $post)
                 <div class='post'>
-                    <a href='/posts/{{$post->id}}'><h2 class='title'>{{ $post->title }}</h2></a>
+                    <h2 class='title'>{{ $post->title }}</h2>
                         <p class='body'>{{ $post->body }}</p>
+                        <p class='updated_at'>{{ $post->updated_at }}</p>
                 </div>
-            @endforeach
-        </div>
+                <div class='back'>
+                    [<a href='/'>back</a>]
+                </div>
     </body>
 </html>
