@@ -13,6 +13,7 @@
                         <p class='body'>{{ $post->body }}</p>
                         <p class='updated_at'>{{ $post->updated_at }}</p>
                 </div>
+                <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
                 <div class='back'>
                     [<a href='/'>back</a>]
                 </div>
