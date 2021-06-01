@@ -15,6 +15,7 @@
                         <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach
+            [<a href='/posts/create'>create</a>]
         </div>
     </body>
 </html>
