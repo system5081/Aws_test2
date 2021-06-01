@@ -12,10 +12,25 @@
             @foreach($posts as $post)
                 <div class='post'>
                     <a href='/posts/{{$post->id}}'><h2 class='title'>{{ $post->title }}</h2></a>
-                        <p class='body'>{{ $post->body }}</p>
+                    <p class='body'>{{ $post->body }}</p>
+                    <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post" style="display:inline">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return fdelete(this);">delete</button> 
+                    </form>
                 </div>
             @endforeach
             [<a href='/posts/create'>create</a>]
         </div>
     </body>
+    <footer>
+        <script>
+            "use strict";
+            function fdelete(e){
+                if(confirm("Delete?")){
+                    document.getElementById("form_{{ $post->id }}").submit();
+                }
+            }
+        </script>
+    </footer>
 </html>
